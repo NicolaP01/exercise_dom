@@ -1,7 +1,7 @@
 window.onload = createGrid;
 function createGrid() {
     let board = document.getElementById("board");
-    let count = 0;
+    // let count = 0;
     for (let x = 0; x < 8; x++) {
         for (let y = 0; y < 8; y++) {
             let square = document.createElement('div');
