@@ -8,13 +8,13 @@ function createGrid() {
             square.classList.add('square');
             if ((x + y) % 2 === 0) {
                 square.classList.add('white');
-                square.id = "square" + count;
-                count++;
+                // square.id = "square" + count;
+                // count++;
 
             } else {
                 square.classList.add('black');
-                square.id = "square" + count;
-                count++;
+                // square.id = "square" + count;
+                // count++;
             }
             board.appendChild(square);
         }
@@ -22,13 +22,28 @@ function createGrid() {
 }
 
 function invertColor() {
-    for (i = 0; i < 64; i++) {
-        let square = document.getElementById("square" + i)
+    /* for (i = 0; i < 64; i++) {
+         let square = document.getElementById("square" + i)
+         if (square.classList.contains('white')) {
+             square.classList.remove('white')
+             square.classList.add('black')
+         }
+         else{
+             square.classList.remove('black')
+             square.classList.add('white')
+         }
+     }
+    */
+
+    let squares = document.getElementsByClassName('square')
+    console.log(squares.length)
+    for (i = 0; i < squares.length; i++) {
+        let square = squares[i];
         if (square.classList.contains('white')) {
             square.classList.remove('white')
             square.classList.add('black')
         }
-        else{
+        else {
             square.classList.remove('black')
             square.classList.add('white')
         }
