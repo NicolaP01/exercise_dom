@@ -19,22 +19,26 @@ function createGrid() {
             board.appendChild(square);
         }
     }
+    let square = document.getElementsByClassName('square')
+    for (let i = 0; i < square.length; i++) {
+        let button = document.createElement("button")
+        button.className = "bottone";
+        button.style = "height: 100%; width: 100%; background-color: transparent; border: white;";
+        button.addEventListener("click", function () {
+            if (square[i].classList.contains('white')) {
+                square[i].classList.remove('white')
+                square[i].classList.add('black')
+            }
+            else {
+                square[i].classList.remove('black')
+                square[i].classList.add('white')
+            }
+        })
+        square[i].appendChild(button);
+    }
 }
 
 function invertColor() {
-    /* for (i = 0; i < 64; i++) {
-         let square = document.getElementById("square" + i)
-         if (square.classList.contains('white')) {
-             square.classList.remove('white')
-             square.classList.add('black')
-         }
-         else{
-             square.classList.remove('black')
-             square.classList.add('white')
-         }
-     }
-    */
-
     let squares = document.getElementsByClassName('square')
     console.log(squares.length)
     for (i = 0; i < squares.length; i++) {
@@ -48,4 +52,16 @@ function invertColor() {
             square.classList.add('white')
         }
     }
+    /* for (i = 0; i < 64; i++) {
+         let square = document.getElementById("square" + i)
+         if (square.classList.contains('white')) {
+             square.classList.remove('white')
+             square.classList.add('black')
+         }
+         else{
+             square.classList.remove('black')
+             square.classList.add('white')
+         }
+     }
+    */
 }
