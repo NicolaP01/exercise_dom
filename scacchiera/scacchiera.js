@@ -22,8 +22,7 @@ function createGrid() {
     let square = document.getElementsByClassName('square')
     for (let i = 0; i < square.length; i++) {
         let button = document.createElement("button")
-        button.className = "bottone";
-        button.style = "height: 100%; width: 100%; background-color: transparent; border: white;";
+        button.className = "button";
         button.addEventListener("click", function () {
             if (square[i].classList.contains('white')) {
                 square[i].classList.remove('white')
